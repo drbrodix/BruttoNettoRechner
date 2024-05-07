@@ -6,7 +6,7 @@ import java.awt.event.ActionListener;
 
 public class Controller implements ActionListener {
 
-    private View view;
+    private final View view;
 
     public Controller() {
 

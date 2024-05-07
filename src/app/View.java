@@ -6,13 +6,11 @@ import java.awt.*;
 public class View extends JFrame {
 
     private final JRadioButton bruttoNettoRadio;
-    private final JRadioButton nettoBruttoRadio;
-    private JTextField inputField;
-    private JLabel inputLabel;
-    private JTextField mwstField;
-    private JTextField outputField;
-    private JLabel outputLabel;
-    private final JButton btn;
+    private final JTextField inputField;
+    private final JLabel inputLabel;
+    private final JTextField mwstField;
+    private final JTextField outputField;
+    private final JLabel outputLabel;
 
     public View(Controller controller) {
 
@@ -26,13 +24,14 @@ public class View extends JFrame {
         this.setTitle("Brutto-Netto-Rechner");
 
         //Component Initialization
-        //JPanel container = new JPanel();
         bruttoNettoRadio = new JRadioButton();
-        nettoBruttoRadio = new JRadioButton();
+        JRadioButton nettoBruttoRadio = new JRadioButton();
         inputField = new JTextField();
+        inputLabel = new JLabel();
         mwstField = new JTextField();
         outputField = new JTextField();
-        btn = new JButton();
+        outputLabel = new JLabel();
+        JButton btn = new JButton();
 
         //Radio Buttons packed into group
         ButtonGroup btnGroup = new ButtonGroup();
@@ -54,7 +53,7 @@ public class View extends JFrame {
         bruttoNettoRadio.setSelected(true);
         bruttoNettoRadio.addActionListener(e -> {
             this.inputLabel.setText("Brutto");
-            this.outputLabel.setText("Netto");
+            outputLabel.setText("Netto");
             controller.actionPerformed(null);
         });
 
@@ -63,14 +62,14 @@ public class View extends JFrame {
         nettoBruttoRadio.setFont(new Font("SansSerif", Font.PLAIN, 18));
         nettoBruttoRadio.setBorder(null);
         nettoBruttoRadio.addActionListener(e -> {
-            this.inputLabel.setText("Netto");
-            this.outputLabel.setText("Brutto");
+            inputLabel.setText("Netto");
+            outputLabel.setText("Brutto");
             controller.actionPerformed(null);
         });
 
         //Input Field Configuration
         JPanel inputPanel = new JPanel();
-        inputLabel = new JLabel("Brutto");
+        inputLabel.setText("Brutto");
         inputLabel.setLabelFor(inputField);
         inputField.setPreferredSize(new Dimension(150, 30));
         inputField.setFont(new Font("SansSerif", Font.PLAIN, 18));
@@ -93,7 +92,7 @@ public class View extends JFrame {
 
         //Output Field Configuration
         JPanel outputPanel = new JPanel();
-        outputLabel = new JLabel("Netto");
+        outputLabel.setText("Netto");
         outputLabel.setLabelFor(inputField);
         outputField.setPreferredSize(new Dimension(150, 30));
         outputField.setFont(new Font("SansSerif", Font.PLAIN, 18));
@@ -110,11 +109,6 @@ public class View extends JFrame {
         btn.setSize(new Dimension(150, 50));
         btn.setFont(new Font("SansSerif", Font.PLAIN, 18));
         btn.addActionListener(controller);
-
-        //Container JPanel Configuration
-        /*container.setLayout(new BoxLayout(container, BoxLayout.Y_AXIS));
-        container.setBorder(BorderFactory.createLineBorder(Color.blue));
-        container.setMaximumSize(new Dimension(640,480));*/
 
         //Components added to Frame / Panel
         this.add(Box.createVerticalGlue());
@@ -138,16 +132,8 @@ public class View extends JFrame {
         return bruttoNettoRadio;
     }
 
-    public JRadioButton getNettoBruttoRadio() {
-        return nettoBruttoRadio;
-    }
-
     JTextField getInputField() {
         return inputField;
-    }
-
-    JLabel getInputLabel() {
-        return inputLabel;
     }
 
     JTextField getMwstField() {
@@ -156,10 +142,6 @@ public class View extends JFrame {
 
     JTextField getOutputField() {
         return outputField;
-    }
-
-    JLabel getOutputLabel() {
-        return outputLabel;
     }
 
 }
