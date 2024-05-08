@@ -20,6 +20,7 @@ public class View extends JFrame {
         );
         this.setSize(new Dimension(640, 480));
         this.setLocationRelativeTo(null);
+        this.setResizable(false);
         this.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         this.setTitle("Brutto-Netto-Rechner");
 
@@ -128,7 +129,7 @@ public class View extends JFrame {
 
     }
 
-    public JRadioButton getBruttoNettoRadio() {
+    JRadioButton getBruttoNettoRadio() {
         return bruttoNettoRadio;
     }
 

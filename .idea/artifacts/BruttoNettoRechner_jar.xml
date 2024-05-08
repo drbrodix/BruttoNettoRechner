@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="BruttoNettoRechner:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/BruttoNettoRechner_jar</output-path>
+    <root id="archive" name="BruttoNettoRechner.jar">
+      <element id="module-output" name="BruttoNettoRechner" />
+    </root>
+  </artifact>
+</component>
